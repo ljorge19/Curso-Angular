@@ -16,13 +16,20 @@ export class LikeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.likeOnOff = false;
   }
 
   onClick(){
    /*  this.coracao = !this.coracao; */
     this.change.emit({newValue: this.coracao})
-    this.contador++;
+    
     this.likeOnOff = !this.likeOnOff
+
+    if (this.likeOnOff) {
+        this.contador =1
+    } else {
+      this.contador =0
+    }
   }
 
   mudando2(objeto){
