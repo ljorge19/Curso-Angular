@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Curso-Angular';
-}
+  postando = {
+    title:'title',
+    chiclete: false
+  };
+
+  mudando(objeto){
+   console.log("favorito alterado", objeto);
+  }
+
+  }
