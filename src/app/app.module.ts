@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { PostService } from './services/post.service';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,6 +23,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { PostComponent } from './post/post.component';
 import { AppErrorHandler } from './common/validators/app-error-handler';
 import { DataService } from './services/data.service';
+import { GithubFollowersComponent } from './github-followers/github-followers.component';
+import { GithubFollowersService } from './services/github-followers.service';
 
 
 
@@ -40,12 +43,13 @@ import { DataService } from './services/data.service';
     SignupFormComponent,
     NewCourseFormComponent,
     ChangePasswordComponent,
-    PostComponent
+    PostComponent,
+    GithubFollowersComponent
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    
     FormsModule,
     ReactiveFormsModule,
     HttpModule
@@ -53,6 +57,7 @@ import { DataService } from './services/data.service';
   providers: [
     CoursesService, 
     PostService,
+    GithubFollowersService,
     {provide : ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]
