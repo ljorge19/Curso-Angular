@@ -29,6 +29,8 @@ import { GithubFollowersService } from './services/github-followers.service';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ArchiveRoutingComponent } from './archive-routing/archive-routing.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 
 
@@ -52,7 +54,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     HomeComponent,
     GithubProfileComponent,
     NotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    ArchiveRoutingComponent,
+    ArchiveComponent
     
   ],
   imports: [
@@ -76,6 +80,14 @@ import { NavbarComponent } from './navbar/navbar.component';
       { 
         path: 'posts', 
         component: PostComponent
+      },
+      { 
+        path: 'archive', 
+        component: ArchiveRoutingComponent
+      },
+      { 
+        path: 'archive/:ano/:mes', 
+        component: ArchiveComponent
       },
       { 
         path: '**', 
