@@ -1,3 +1,4 @@
+import { GithubProfileComponent } from './github-profile/github-profile.component';
 import { RouterModule } from '@angular/router';
 import { PostService } from './services/post.service';
 import { HttpModule } from '@angular/http';
@@ -25,6 +26,9 @@ import { AppErrorHandler } from './common/validators/app-error-handler';
 import { DataService } from './services/data.service';
 import { GithubFollowersComponent } from './github-followers/github-followers.component';
 import { GithubFollowersService } from './services/github-followers.service';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -44,15 +48,40 @@ import { GithubFollowersService } from './services/github-followers.service';
     NewCourseFormComponent,
     ChangePasswordComponent,
     PostComponent,
-    GithubFollowersComponent
+    GithubFollowersComponent,
+    HomeComponent,
+    GithubProfileComponent,
+    NotFoundComponent,
+    NavbarComponent
     
   ],
   imports: [
     BrowserModule,
-    
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      { 
+        path: '', 
+        component: HomeComponent
+      },
+      { 
+        path: 'followers/:id/:usarname', 
+        component: GithubProfileComponent
+      },
+      { 
+        path: 'followers', 
+        component: GithubFollowersComponent
+      },
+      { 
+        path: 'posts', 
+        component: PostComponent
+      },
+      { 
+        path: '**', 
+        component: NotFoundComponent
+      }
+    ]),
   ],
   providers: [
     CoursesService, 
