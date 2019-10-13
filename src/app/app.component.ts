@@ -8,11 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   postando = {
     title:'title',
-    chiclete: false
+    favorito: true
   };
 
-  mudando(objeto){
-   console.log("favorito alterado", objeto);
+
+  mudando(postando){
+    console.log("elemento", postando);
+   console.log("favorito alterado", postando.title + " " + postando.favorito);
   }
 
   }

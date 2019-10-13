@@ -7,8 +7,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class FavoriteComponent implements OnInit {
 
-  @Input('favorito') banana: boolean;
-  @Output() change = new EventEmitter ;
+  @Input('favorito') postando: any;
+  @Output('change') change = new EventEmitter ;
+  testando: "testando outro parametro";
 
   constructor() { }
 
@@ -16,9 +17,10 @@ export class FavoriteComponent implements OnInit {
   }
 
   onClick(){
-    this.banana = !this.banana;
-    this.change.emit({newValue: this.banana});
-
+    this.postando.favorito = !this.postando.favorito;
+    this.postando.title = "trocadooooo"
+    this.change.emit(this.postando);
+  
   }
 
   mudando2(objeto){
